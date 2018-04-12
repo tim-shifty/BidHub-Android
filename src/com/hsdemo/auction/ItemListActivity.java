@@ -8,7 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
@@ -45,12 +45,12 @@ import java.util.Date;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import de.greenrobot.event.EventBus;
 
-public class ItemListActivity extends ActionBarActivity {
+public class ItemListActivity extends AppCompatActivity {
 
-  @InjectView(R.id.itemslist)
+  @BindView(R.id.itemslist)
   ListView itemsList;
 
   List<AuctionItem> allItems = new ArrayList<AuctionItem>();
@@ -58,13 +58,13 @@ public class ItemListActivity extends ActionBarActivity {
 
   boolean gotFirstBids;
 
-  @InjectView(R.id.toolbar)
+  @BindView(R.id.toolbar)
   Toolbar toolbar;
 
-  @InjectView(R.id.base_tint_darken)
+  @BindView(R.id.base_tint_darken)
   View tint;
 
-  @InjectView(R.id.mainprogress)
+  @BindView(R.id.mainprogress)
   ProgressBar progress;
 
   Handler handler = new Handler();
@@ -74,26 +74,26 @@ public class ItemListActivity extends ActionBarActivity {
   boolean bidding = false;
   boolean cardsUntouched = true;
 
-  @InjectView(R.id.drawer_layout)
+  @BindView(R.id.drawer_layout)
   DrawerLayout mDrawerLayout;
   ActionBarDrawerToggle mDrawerToggle;
 
-  @InjectView(R.id.left_drawer)
+  @BindView(R.id.left_drawer)
   View drawer;
 
-  @InjectView(R.id.menu_all)
+  @BindView(R.id.menu_all)
   View all;
 
-  @InjectView(R.id.menu_nobids)
+  @BindView(R.id.menu_nobids)
   View noBids;
 
-  @InjectView(R.id.menu_myitems)
+  @BindView(R.id.menu_myitems)
   View myItems;
 
-  @InjectView(R.id.menu_logout)
+  @BindView(R.id.menu_logout)
   View logout;
 
-  @InjectView(R.id.menu_email)
+  @BindView(R.id.menu_email)
   TextView userEmail;
 
   String listQuery = DataManager.QUERY_ALL;
@@ -104,7 +104,7 @@ public class ItemListActivity extends ActionBarActivity {
     DisplayUtils.init(this);
 
     setContentView(R.layout.main);
-    ButterKnife.inject(this);
+    ButterKnife.bind(this);
 
     progress.setVisibility(View.VISIBLE);
 
@@ -167,86 +167,86 @@ public class ItemListActivity extends ActionBarActivity {
 
     public class CardViewHolder {
 
-      @InjectView(R.id.itemcard_shell)
+      @BindView(R.id.itemcard_shell)
       LinearLayout cardShell;
 
-      @InjectView(R.id.dashcard)
+      @BindView(R.id.dashcard)
       CardView card;
 
-      @InjectView(R.id.dashcard_top)
+      @BindView(R.id.dashcard_top)
       public RelativeLayout top;
 
-      @InjectView(R.id.dashcard_contentcontainer)
+      @BindView(R.id.dashcard_contentcontainer)
       public View contentContainer;
 
-      @InjectView(R.id.dashcard_top_separator)
+      @BindView(R.id.dashcard_top_separator)
       public View topSeparator;
 
-      @InjectView(R.id.dashcard_bottom)
+      @BindView(R.id.dashcard_bottom)
       public View bottom;
 
-      @InjectView(R.id.dashcard_loadingspinner)
+      @BindView(R.id.dashcard_loadingspinner)
       ProgressBar loader;
 
-      @InjectView(R.id.dashcard_icon)
+      @BindView(R.id.dashcard_icon)
       TextView icon;
 
-      @InjectView(R.id.banner)
+      @BindView(R.id.banner)
       NetworkImageView banner;
 
-      @InjectView(R.id.itemcard_title)
+      @BindView(R.id.itemcard_title)
       TextView title;
 
-      @InjectView(R.id.itemcard_donor)
+      @BindView(R.id.itemcard_donor)
       TextView donor;
 
-      @InjectView(R.id.avatar)
+      @BindView(R.id.avatar)
       NetworkImageView avatar;
 
-      @InjectView(R.id.itemcard_description)
+      @BindView(R.id.itemcard_description)
       TextView description;
 
-      @InjectView(R.id.itemcard_price)
+      @BindView(R.id.itemcard_price)
       TextView price;
 
-      @InjectView(R.id.plusone)
+      @BindView(R.id.plusone)
       Button plusOne;
 
-      @InjectView(R.id.plusfive)
+      @BindView(R.id.plusfive)
       Button plusFive;
 
-      @InjectView(R.id.plusten)
+      @BindView(R.id.plusten)
       Button plusTen;
 
-      @InjectView(R.id.placebid)
+      @BindView(R.id.placebid)
       Button placeBid;
 
-      @InjectView(R.id.itemcard_messagecontainer)
+      @BindView(R.id.itemcard_messagecontainer)
       View messageContainer;
 
-      @InjectView(R.id.itemcard_message)
+      @BindView(R.id.itemcard_message)
       TextView message;
 
-      @InjectView(R.id.itemcard_bidqty)
+      @BindView(R.id.itemcard_bidqty)
       TextView bidQty;
 
-      @InjectView(R.id.itemcard_other)
+      @BindView(R.id.itemcard_other)
       Button other;
 
-      @InjectView(R.id.itemcard_confirmcontainer)
+      @BindView(R.id.itemcard_confirmcontainer)
       View confirmContainer;
 
-      @InjectView(R.id.itemcard_buttons)
+      @BindView(R.id.itemcard_buttons)
       View buttonsContainer;
 
-      @InjectView(R.id.itemcard_confirm)
+      @BindView(R.id.itemcard_confirm)
       Button confirm;
 
-      @InjectView(R.id.itemcard_cancel)
+      @BindView(R.id.itemcard_cancel)
       Button cancel;
 
       public CardViewHolder(View view) {
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         DisplayUtils.pictosifyTextView(icon);
       }
 
@@ -653,7 +653,8 @@ public class ItemListActivity extends ActionBarActivity {
       }
     };
 
-    mDrawerLayout.setDrawerListener(mDrawerToggle);}
+    mDrawerLayout.setDrawerListener(mDrawerToggle);
+  }
 
   public void setupMenu() {
     userEmail.setText(IdentityManager.getEmail(this));

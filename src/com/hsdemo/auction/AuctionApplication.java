@@ -15,9 +15,6 @@ import com.parse.SaveCallback;
 
 public class AuctionApplication extends Application {
 
-  public static final String APP_ID = "<your app id>";
-  public static final String CLIENT_KEY = "<your client key>";
-
   @Override
   public void onCreate() {
     super.onCreate();
@@ -27,7 +24,9 @@ public class AuctionApplication extends Application {
 
 
     // Add your initialization code here
-    Parse.initialize(this, APP_ID, CLIENT_KEY);
+    Parse.initialize(this,
+            getResources().getString(R.string.parse_app_id),
+            getResources().getString(R.string.parse_client_key));
     ParsePush.subscribeInBackground("", new SaveCallback() {
       @Override
       public void done(ParseException e) {

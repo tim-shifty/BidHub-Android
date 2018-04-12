@@ -4,7 +4,8 @@ Android client for HubSpot's open-source silent auction app. For an overview of 
 ![](http://i.imgur.com/qIud2uSl.png)
 
 ## Getting started
-If you haven't yet, you're going to want to set up Parse by following the instructions in the [BidHub Cloud Code repository](https://github.com/HubSpot/BidHub-CloudCode). All set? `git clone` this repository and import it into Android Studio. Grab your application ID and client key from Parse (Parse > Settings > Keys). Set `APP_ID` and `CLIENT_KEY` in *AuctionApplication.java* to these values. 
+If you haven't yet, you're going to want to set up Parse by following the instructions in the [BidHub Cloud Code repository](https://github.com/HubSpot/BidHub-CloudCode). All set? `git clone` this repository and import it into Android Studio. Grab your application ID and client key from Parse (Parse > Settings > Keys).
+Set these into the `parse_app_id` and `parse_client_key` elements in `res/values/strings.xml`.
 
 Then just run the app, enter your name and email address, and you should see Test Object 7! Bid on it and see what happens. To keep an eye on the action, check out the [Web Panel](https://github.com/HubSpot/BidHub-WebAdmin) where you can see all your items and bids.
 

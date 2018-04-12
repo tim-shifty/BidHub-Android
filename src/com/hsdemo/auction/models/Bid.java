@@ -9,7 +9,7 @@ import java.util.Date;
  * Created by jtsuji on 11/14/14.
  */
 
-@ParseClassName("NewBid")
+@ParseClassName("Bid")
 public class Bid extends ParseObject {
 
   public static final String INITIAL_BIDDER_EMAIL = "";
